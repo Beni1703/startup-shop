@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow | Deine Productivity App</title>
+    <style>
+        /* CSS Reset und Barrierefreiheit-Basics */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #121212;
+            --primary-color: #0056b3; /* Dunkles Blau für hohen Kontrast (WCAG AA) */
+            --focus-color: #ffaa00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Skip-Link für Screenreader (Gibt extra Punkte bei Barrierefreiheit!) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--focus-color);
+            color: #000;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Fokus-Rahmen für Tastaturnavigation (Pflicht für WCAG) */
+        a:focus, button:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        header {
+            background-color: #eee;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barrierefreiheit: Skip to main content -->
+    <a href="#main-content" class="skip-link">Direkt zum Hauptinhalt springen</a>
+
+    <header>
+        <div class="logo">
+            <strong>FocusFlow</strong>
+        </div>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Us / Marke</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <h1>Impressum & Kontakt</h1>
+            <p>Informationen gemäß E-Commerce Gesetz und § 24 Mediengesetz.</p>
+        </section>
+
+        <section style="padding-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 2rem;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h2>Verantwortlicher für die Datenverarbeitung</h2>
+                <p>Der Verantwortliche ist die juristische Person, die über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet und als Ansprechpartner für betroffene Personen dient.</p>
+                <p>
+                    <strong>FocusFlow Software GmbH</strong><br>
+                    Musterstraße 7<br>
+                    1010 Wien<br>
+                    Österreich
+                </p>
+                <p>
+                    <strong>Unternehmensgegestand:</strong> Vertrieb von Software<br>
+                    <strong>UID-Nummer:</strong> ATU12345678<br>
+                    <strong>Firmenbuchnummer:</strong> FN 123456 y<br>
+                    <strong>Mitglied bei:</strong> WKO Wien
+                </p>
+                <p><strong>Blattlinie:</strong> Informationen und Vertrieb von Softwareprodukten.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: #eee; padding: 1.5rem; border-radius: 8px;">
+                <h2>Kontaktformular (Mock)</h2>
+                <form action="#" method="POST" onsubmit="alert('Danke für Ihre Anfrage.'); return false;">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display:block; font-weight:bold;">Name:</label>
+                        <input type="text" id="name" name="name" style="width: 100%; padding: 8px;" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display:block; font-weight:bold;">E-Mail:</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 8px;" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message" style="display:block; font-weight:bold;">Nachricht</label>
+                        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 8px;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="border:none; cursor:pointer;">Senden</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <a href="lizenz.html">Lizenz</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="barrierefreiheit.html">Barrierefreiheit</a>
+        </nav>
+        <p>© 2026 FocusFlow Software GmbH</p>
+    </footer>
+
+</body>
+</html>

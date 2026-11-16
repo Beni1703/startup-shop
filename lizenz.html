@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow | Deine Productivity App</title>
+    <style>
+        /* CSS Reset und Barrierefreiheit-Basics */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #121212;
+            --primary-color: #0056b3; /* Dunkles Blau für hohen Kontrast (WCAG AA) */
+            --focus-color: #ffaa00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Skip-Link für Screenreader (Gibt extra Punkte bei Barrierefreiheit!) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--focus-color);
+            color: #000;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Fokus-Rahmen für Tastaturnavigation (Pflicht für WCAG) */
+        a:focus, button:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        header {
+            background-color: #eee;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barrierefreiheit: Skip to main content -->
+    <a href="#main-content" class="skip-link">Direkt zum Hauptinhalt springen</a>
+
+    <header>
+        <div class="logo">
+            <strong>FocusFlow</strong>
+        </div>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Us / Marke</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <h1>End User License Agreement (EULA)</h1>
+            <p>Nutzungsbedingung für FocusFlow Pro.</p>
+        </section>
+
+        <section style="padding-bottom: 2rem;">
+            <h2>1. Erteilte Rechte</h2>
+            <p>Ziel dieser EULA ist es, dass das Unternehmen das Eigentum an der Software behält und Haftungen weitgehend abgibt. Mit dem Kauf erwerben Sie eine nicht-exklusive Lizenz. Das bedeutet, Sie düfen die Software nutzen, der Lizenzgeber darf jedoch weiterhin Lizenzen an Dritte vergeben. Der Lizenznehmer ist nicht berechtigt, ohne ausdrücklich vertragliche Vereinbarung Sublizenzen an Dritte zu vergeben.</p>
+
+            <h2>2. Einschränkungen & Urheberrecht</h2>
+            <p>Das Umgehen von wirksamen technischen Schutzmaßnahmen (wie dem Kopierschutz der Pro Version) ist gemäß §90b-d UrhG strengstens verboten. Ebenso ist eine Dekompilierung des Quellcodes (§ 40e UrhG) unzulässig, es sei denn, dies ist zwingend zur Fehlern oder zur Herstellung von Interoperabilität erforderlich.</p>
+
+            <h2>3. Haftungsbeschränkung</h2>
+            <p>Die Software wird ohne Mängelgewähr zur Verfügung gestellt. Die FocusFlow SOftware GmbH schließt sämtliche Garantieen für entgangenen Gewinn oder Produktivitätsausfälle bei der Nutzung des Webseiten-Blockers aus. Eine Haftung erfolgt nur bei grober Fahrlässigkeit.</p>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <a href="lizenz.html">Lizenz</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="barrierefreiheit.html">Barrierefreiheit</a>
+        </nav>
+        <p>© 2026 FocusFlow Software GmbH</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow | Deine Productivity App</title>
+    <style>
+        /* CSS Reset und Barrierefreiheit-Basics */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #121212;
+            --primary-color: #0056b3; /* Dunkles Blau für hohen Kontrast (WCAG AA) */
+            --focus-color: #ffaa00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Skip-Link für Screenreader (Gibt extra Punkte bei Barrierefreiheit!) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--focus-color);
+            color: #000;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Fokus-Rahmen für Tastaturnavigation (Pflicht für WCAG) */
+        a:focus, button:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        header {
+            background-color: #eee;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barrierefreiheit: Skip to main content -->
+    <a href="#main-content" class="skip-link">Direkt zum Hauptinhalt springen</a>
+
+    <header>
+        <div class="logo">
+            <strong>FocusFlow</strong>
+        </div>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Us / Marke</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <h1>Schluss mit Ablenkung. Fokus an.</h1>
+            <p>FocusFlow ist der simple Pomodoro-Timer mit integriertem Website-Blocker. Hol dir deine Konzentration zurück und schaff dein Zeug in der Hälfte der Zeit.</p>
+            <a href="#shop" class="btn">Pro-Version für 14,99 € kaufen</a>
+        </section>
+
+        <section id="features">
+            <h2>Warum FocusFlow?</h2>
+            <ul>
+                <li><strong>Simpel:</strong> Kein Schnickschnack. Ein Klick und der 25-Minuten-Timer läuft.</li>
+                <li><strong>Blocker:</strong> TikTok und Insta sind gesperrt, solange du arbeitest.</li>
+                <li><strong>Einmal zahlen:</strong> Kein nerviges Abo. Du zahlst einmal 14,99 € und hast die App für immer.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <a href="lizenz.html">Lizenz</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="barrierefreiheit.html">Barrierefreiheit</a>
+        </nav>
+        <p>© 2026 FocusFlow Software GmbH</p>
+    </footer>
+
+</body>
+</html>

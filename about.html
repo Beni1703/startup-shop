@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow | Deine Productivity App</title>
+    <style>
+        /* CSS Reset und Barrierefreiheit-Basics */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #121212;
+            --primary-color: #0056b3; /* Dunkles Blau für hohen Kontrast (WCAG AA) */
+            --focus-color: #ffaa00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Skip-Link für Screenreader (Gibt extra Punkte bei Barrierefreiheit!) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--focus-color);
+            color: #000;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Fokus-Rahmen für Tastaturnavigation (Pflicht für WCAG) */
+        a:focus, button:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        header {
+            background-color: #eee;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barrierefreiheit: Skip to main content -->
+    <a href="#main-content" class="skip-link">Direkt zum Hauptinhalt springen</a>
+
+    <header>
+        <div class="logo">
+            <strong>FocusFlow</strong>
+        </div>
+        <nav aria-label="Hauptnavigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <h1>Über das Unternehmen & Konzept</h1>
+            <p>Hintergründe zu FocusFlow, unserem Geschäftsmodell und unseren eingetragenen Marken.</p>
+        </section>
+
+        <section style="padding-bottom: 2rem;">
+            <h2>Unser Konzept (Vorbereitung)</h2>
+            <ul>
+                <li><strong>Das Softwareprodukt:</strong> "FocusFlow" ist eine minimalistische Anwendung, die einen 25 Minuten Timer mit einem Webseiten-Blcoker kombiniert.</li>
+                <li><strong>Die Zielgruppe:</strong> Studierende, Freelancer und Personen, die im Home Office arbeiten und Ablenkungen durch Social Media reduzieren wollen.</li>
+                <li><strong>Das Unternehmen:</strong> FocusFlow Software GmbH, mit Sitz in Wien. Wir sind ein junges Gründerteam bestehend aus 3 Mitarbeitern.</li>
+                <li><strong>Das Geschäftsmodell</strong> Wir nutzen ein Freemium Modell. Die Basis App ist kostenlos. Die vollen Funktionen (Webseiten Blocker und Statistiken) vertreiben wir über einen Einmalverkauf für 14,99€.</li>
+            </ul>
+
+            <h2>Unsere Markenformen</h2>
+            <p>Im Vorfeld der Veröffentlichung haben wir mithilfe der Tools <strong>EUIPO eSearch</strong> und <strong>TMview</strong> sichergestellt, dass wir keine bestehenden Markenrechte verletzen. Unsere Markenformen wurden den zutreffenden <strong>Niza Klassen 9 (Software)</strong> und <strong>42 (Softwareentwicklung)</strong> zugeordnet.</p>
+            
+            <ul>
+                <li><strong>1. Wortmarke:</strong> "FocusFlow" Der gewählte Name ist prägnant udn beschreibt den Hauptnutzen der Anwendung: die Förderung von Fokus und des sogenannten Flow Erlebnisses.</li>
+                <li><strong>2. Bildmarke:</strong> <br>
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2" aria-hidden="true" style="margin: 10px 0;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg><br>
+                    Ein minimalistisches Uhren Symbol. Es repräsentiert das Kernkonzept des Zeitmanagements.
+                </li>
+                <li><strong>3. Hörmarke:</strong> <br>
+                    <audio controls style="margin: 10px 0;">
+                        <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+                        Dein Browser unterstützt kein Audio.
+                    </audio><br>
+                    Ein kurzes Doppelbeep. Dies ist das akustische Signal, welches das Ende eines Arbeitsintervalles markiert.
+                </li>
+            </ul>
+
+            <h2>Urheberrecht & Lizenzen</h2>
+            <p>Die korrekte Ausweisung von Verwertungsrechten ist für uns ein wichtiger Standart. Nachfolgend finden Sie die Dokumentation aller verwendeten Medien:</p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;" border="1">
+                <tr>
+                    <th style="padding: 8px; background: #eee;">Medienart</th>
+                    <th style="padding: 8px; background: #eee;">Quelle / Urheber</th>
+                    <th style="padding: 8px; background: #eee;">Lizenz / Nutzungsrecht</th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Bildmarke (Grafik)</td>
+                    <td style="padding: 8px;">Feather Icons</td>
+                    <td style="padding: 8px;">MIT License (freie kommerzielle Nutzung)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Hörmarke (Sound)</td>
+                    <td style="padding: 8px;">Google Sound Library</td>
+                    <td style="padding: 8px;">CC0 (Creative Commons Zero)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Schriftarten</td>
+                    <td style="padding: 8px;">System Fonts (Apple/Windows)</td>
+                    <td style="padding: 8px;">Royalty-Free</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Texte & Quellcode</td>
+                    <td style="padding: 8px;">FocusFlow Software GmbH</td>
+                    <td style="padding: 8px;">Alle Rechte vorbehalten</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Rechtliche Navigation">
+            <a href="lizenz.html">Lizenz</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="barrierefreiheit.html">Barrierefreiheit</a>
+        </nav>
+        <p>© 2026 FocusFlow Software GmbH</p>
+    </footer>
+
+</body>
+</html>
